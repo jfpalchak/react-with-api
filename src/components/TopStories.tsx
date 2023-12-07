@@ -1,5 +1,4 @@
 import useFetch from "../hooks/useFetch";
-import { useState } from "react";
 
 function TopStories() {
 
