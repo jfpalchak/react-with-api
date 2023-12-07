@@ -1,7 +1,15 @@
 import topStoriesReducer from '../../reducers/top-stories-reducer';
+import * as c from './../../actions/ActionTypes';
 
 describe('topStoriesReducer', () => {
-  
+
+  let action: ActionType;
+
+  type ActionType = {
+    type: string | null;
+    topStories?: string;
+  }
+
   const initialState = {
     isLoaded: false,
     topStories: [],
@@ -16,4 +24,18 @@ describe('topStoriesReducer', () => {
       .toThrowError('There is no action matching null.');
   });
 
-})
+  test('successfully getting top stories should change isLoaded to true and update topStories', () => {
+    const topStories = "An article";
+    action = {
+      type: c.GET_TOP_STORIES_SUCCESS,
+      topStories
+    };
+
+    expect(topStoriesReducer(initialState, action)).toEqual({
+      isLoaded: true,
+      topStories: "An article",
+      error: null
+    });
+  });
+
+});

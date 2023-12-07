@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ActionType, StateType, Article } from "../types";
 
 
 function TopStories() {
@@ -45,15 +46,6 @@ function TopStories() {
       </>    
     );
   }
-}
-
-// # # # # #
-// # TYPES #
-// # # # # #
-
-interface Article {
-  title: string;
-  abstract: string;
 }
 
 export default TopStories;
