@@ -7,7 +7,7 @@ describe('topStoriesReducer', () => {
 
   type ActionType = {
     type: string | null;
-    topStories?: string;
+    topStories?: Article[];
     error?: string
   }
 
@@ -15,6 +15,16 @@ describe('topStoriesReducer', () => {
     isLoaded: false,
     topStories: [],
     error: null
+  }
+
+  const testArticle: Article = {
+    title: "Title",
+    abstract: "Abstract"
+  };
+
+  type Article = {
+    title: string;
+    abstract: string;
   }
 
   test('should successfully throw a new error if a non-matching action type is passed into it', () => {
@@ -26,7 +36,7 @@ describe('topStoriesReducer', () => {
   });
 
   test('successfully getting top stories should change isLoaded to true and update topStories', () => {
-    const topStories = "An article";
+    const topStories = [testArticle];
     action = {
       type: c.GET_TOP_STORIES_SUCCESS,
       topStories
@@ -34,7 +44,7 @@ describe('topStoriesReducer', () => {
 
     expect(topStoriesReducer(initialState, action)).toEqual({
       isLoaded: true,
-      topStories: "An article",
+      topStories: [testArticle],
       error: null
     });
   });

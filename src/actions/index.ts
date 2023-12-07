@@ -1,7 +1,7 @@
 import { Article, ActionType } from '../types';
 import * as c from './ActionTypes';
 
-export const getTopStoriesSuccess = (topStories: Article[] | string): ActionType => ({
+export const getTopStoriesSuccess = (topStories: Article[]): ActionType => ({
   type: c.GET_TOP_STORIES_SUCCESS,
   topStories
 });

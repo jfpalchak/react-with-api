@@ -3,7 +3,10 @@ import * as c from '../../actions/ActionTypes';
 
 describe('top stories reducer actions', () => {
   it('getTopStoriesSuccess should create GET_TOP_STORIES_SUCCESS action', () => {
-    const topStories = "An article";
+    const topStories = [{
+      title: "Title",
+      abstract: "Abstract"
+    }];
     expect(actions.getTopStoriesSuccess(topStories)).toEqual({
       type: c.GET_TOP_STORIES_SUCCESS,
       topStories

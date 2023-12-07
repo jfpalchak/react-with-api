@@ -1,12 +1,12 @@
 export type ActionType = {
   type: string | null;
-  topStories?: Article[] | string;
+  topStories?: Article[];
   error?: string;
 }
 
 export type StateType = {
   isLoaded: boolean;
-  topStories?: Article[] | string;
+  topStories?: Article[];
   error?: string | null;
 }
 
