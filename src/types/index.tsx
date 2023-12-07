@@ -1,6 +1,7 @@
 export type ActionType = {
   type: string | null;
   topStories?: Article[] | string;
+  error?: string;
 }
 
 export type StateType = {
